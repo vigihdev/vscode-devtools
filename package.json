@@ -1,0 +1,99 @@
+{
+    "name": "vscode-devtools",
+    "description": "Alat devoleper Vscode",
+    "author": "vigihdev@gmail.com",
+    "publisher": "vigihdev",
+    "version": "1.0.0",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "contributes": {
+        "configuration": {
+            "title": "Vscode Devtools",
+            "properties": {
+                "vscode-devtools.completionDirectory": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Completion Directory and File."
+                },
+                "vscode-devtools.completionYii2": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Completion Directory Yii2."
+                },
+                "vscode-devtools.completionBootstrap": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Completion Bootstrap."
+                },
+                "vscode-devtools.completionSass": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Completion Sass."
+                },
+                "vscode-devtools.codicon": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Codicon."
+                },
+                "vscode-devtools.completionSqlYii2": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Completion Sql Yii2."
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "catCodicons.show",
+                "title": "Show Cat Codicons",
+                "category": "Cat Codicons"
+            },
+            {
+                "command": "materialIconsView.show",
+                "title": "Dev Tools Material Icons View",
+                "category": "Material Icons"
+            }
+        ]
+    },
+    "main": "out/extension.js",
+    "files": [
+        "out/**/*"
+    ],
+    "scripts": {
+        "del:out": "rm -r out",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "lint": "eslint src --ext ts --fix",
+        "dev": "nodemon src/extension.ts",
+        "debug": "nodemon -w lib -w server.js --inspect=0.0.0.0 server.js",
+        "oneoff": "jest --init",
+        "test": "jest"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.2.5",
+        "@types/node": "^16.11.7",
+        "@types/vscode": "^1.32.0",
+        "@typescript-eslint/eslint-plugin": "^5.30.0",
+        "@typescript-eslint/parser": "^5.30.0",
+        "eslint": "^8.13.0",
+        "jest": "^29.3.1",
+        "typescript": "^4.9.4"
+    },
+    "dependencies": {
+        "@types/express": "^4.17.15",
+        "@types/tsglobal": "file:node_modules/tsglobal",
+        "@vigihdev/material-icons": "file:node_modules/material-icons",
+        "express": "^4.18.2",
+        "promise-socket": "^7.0.0",
+        "ts-jest": "^29.0.5",
+        "vscode-common": "^1.50.0"
+    }
+}

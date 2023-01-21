@@ -1,0 +1,24 @@
+{
+    "name": "thrubus/vscode-devtools",
+    "description": "Vscode",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dobrak",
+            "email": "vigihdev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "utils\\": "vendor/utils/src/",
+            "yii2Reflection\\": "vendor/yii2-reflection/src/",
+            "composerDev\\": "vendor/composer-dev/src/",
+            "test\\": "vendor/test/src/"
+        }
+    },
+    "require": {
+        "sabre/event": "dev-master"
+    }
+}

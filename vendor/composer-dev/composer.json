@@ -1,0 +1,19 @@
+{
+    "name": "thrubus/composer-dev",
+    "type": "oriject",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "composerDev\\": "src/",
+            "app\\": "/Users/thrubus/Sites/thrubus/member/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dobrak",
+            "email": "vigihdev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

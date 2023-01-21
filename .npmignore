@@ -1,0 +1,6 @@
+node_modules
+src
+src/extension.ts
+__mocks__
+.github
+.vscode
