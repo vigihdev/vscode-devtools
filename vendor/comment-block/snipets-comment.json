@@ -1,0 +1,32 @@
+[
+	{
+		"label":"** @property *",
+		"insertText":"** \n * \n * @param ${1} \n * @return \n *\n",
+		"documentation":""
+	},
+	{
+		"label": "** @var *",
+		"insertText": "** @var ${1} */",
+		"documentation": ""
+	},
+	{
+		"label": "/",
+		"insertText": "// ${1}",
+		"documentation": ""
+	},
+	{
+		"label": "** Comment Block Basic /* * etc */ *",
+		"insertText": "** \n * ${1} \n * \n * @param ${2} \n * @return ${3} \n */ \n",
+		"documentation": ""
+	},
+	{
+		"label": "** Reflection Reletion *",
+		"insertText": "** \n * Reflection Reletion \n * \n * @return \\$model = \n */ \n",
+		"documentation": ""
+	},
+	{
+		"label": "** Completion Referensi *",
+		"insertText": "** \n * Completion Referensi \n * @path /Users/thrubus/Sites/thrubus/ \n */ \n",
+		"documentation": ""
+	}
+]

@@ -16,7 +16,12 @@
             "yii2Reflection\\": "vendor/yii2-reflection/src/",
             "composerDev\\": "vendor/composer-dev/src/",
             "test\\": "vendor/test/src/"
-        }
+        },
+        "files": [
+            "vendor/emmet",
+            "vendor/bootstrap",
+            "vendor/comment-block"
+        ]
     },
     "require": {
         "sabre/event": "dev-master"

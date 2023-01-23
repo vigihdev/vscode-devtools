@@ -1,6 +1,5 @@
 
 import { WorkspaceConfiguration, workspace } from 'vscode';
-import { isObject } from 'vscode-common/out/types';
 
 const log = (...arg):void => console.log(arg);
 const isSame = (a:string,b:string):boolean => a === b;
@@ -20,12 +19,5 @@ export function getConfigurations():WorkspaceConfiguration{
 
 export function getConfiguration(extensionId:string){
 	const configuration = workspace.getConfiguration();
-
-					// 4) Get the current value
-							const currentValue = configuration.get<{}>('vscode-devtools.completionBootstrap');
-							log(currentValue,configuration)
-	if(isObject(getConfigurations())){
-		log(getConfigurations().get(extensionId))
-	}
 }
 

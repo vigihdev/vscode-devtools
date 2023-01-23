@@ -1,7 +1,7 @@
 import * as path from 'path';
 import * as fs from 'fs';
 import * as fspath from "../utils/fspath";
-import { isArray, isObject } from 'vscode-common/out/types';
+import { isArray, isObject } from '../common/types';
 
 // require __DIR__ . '/../vendor/autoload.php';
 // require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';

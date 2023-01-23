@@ -1,0 +1,13 @@
+[
+	"self",
+	"array",
+	"callable",
+	"bool",
+	"boolean",
+	"float",
+	"int",
+	"integer",
+	"string",
+	"iterable",
+	"stdClass"
+]

@@ -1,6 +1,14 @@
+import { Position } from "vscode";
+import { arrEnd } from "./array2";
+import { isEmpty } from "./string2";
 
-type ArrWords = {
+export type ArrWords = {
 	idx:number,
+	text:string
+};
+
+type PositionWords = {
+	start:number,
 	text:string
 };
 
@@ -44,5 +52,18 @@ export function toArray(word:string):ArrWords[]{
 	word.split('').forEach((w:string,i:number )=> {
 		results.push({idx:i,text:w});
 	});
+	return results;
+}
+//=
+export function wordPosition(needle:string,word:string):PositionWords{
+	const results = <PositionWords>{};
+	if( !isEmpty(needle) && !isEmpty(word) ){
+		const wordArr = word.split(needle);
+		if( wordArr.length > 1 ){
+			const textMain = wordArr.slice(0, (wordArr.length - 1) ).join(needle);
+			results.start = textMain.length;
+			results.text = wordArr.pop();
+		}
+	}
 	return results;
 }

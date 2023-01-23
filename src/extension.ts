@@ -1,24 +1,16 @@
-import {
-    languages, TextLine, Range,
-    ExtensionContext, TextDocument, Position,
-    CancellationToken, CompletionContext, CompletionItem
-} from "vscode";
-import * as fs from "node:fs";
-import * as path from "node:path";
+import { ExtensionContext } from "vscode";
 import * as net from "node:net";
-import { spawn } from "node:child_process";
 
 import { DirectoryExtension } from './directory/directoryExtension';
 import { yii2Extension } from './yii2/yii2Extension';
 import { MaterialIconsExtension } from "./material-icons/materialIconsExtension";
+import { bootstrapExtension } from "./bootstrap/bootstrapExtension";
+import { commentBlockCompletion } from "./comment-block/commentBlockCompletion";
 
-
-const log = (...arg): void => console.log(arg);
-const log1 = (arg): void => console.log(arg);
 
 export async function activate(context: ExtensionContext): Promise<void> {
 
-    console.log('activate');
+    console.log('Extension Context activate');
 
     // == server
     phpServer();
@@ -26,25 +18,9 @@ export async function activate(context: ExtensionContext): Promise<void> {
     // == ExtensionContext
     DirectoryExtension(context);
     MaterialIconsExtension(context);
+    bootstrapExtension(context);
+    commentBlockCompletion(context);
     // yii2Extension(context);
-
-    let triggerCharacter = ['-', '>'];
-    const provider1 = languages.registerCompletionItemProvider('php', {
-
-        provideCompletionItems(
-            document: TextDocument,
-            position: Position,
-            token: CancellationToken,
-            context: CompletionContext) {
-
-            const textLine: TextLine = document.lineAt(position.line)
-            const completion: CompletionItem[] = [];
-
-            return completion;
-        }
-    }, ...triggerCharacter);
-
-    context.subscriptions.push(provider1);
 }
 
 async function phpServer(): Promise<void> {
@@ -58,7 +34,7 @@ async function phpServer(): Promise<void> {
         })
         server.listen(0, '127.0.0.1', () => {
             const info : net.AddressInfo = JSON.parse(JSON.stringify(server.address()))
-            console.log('address : ' + info.address + ' port : ' + info.port + ' family : ' + info.family);
+            console.log('Php Server Deso address : ' + info.address + ' port : ' + info.port + ' family : ' + info.family);
         })
     });
     serverOptions();
